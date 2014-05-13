@@ -1,0 +1,41 @@
+Instructions for program
+
+Commands:
+ 	$ make 
+		this command compiles all packet.java, send.java and receiver.java 
+		by running javac on both java files.
+
+	$ make clean
+		remove all .class files which has been compiled
+	$ java server
+		run server program before run client. 
+		server will generate a random port number for TCP negotiation with client.
+		server has to be run before execute client program
+	$ java client <host1/server_address> <n_port> msg
+		run client program after server has been started.
+		Any of the three arguments is missing will raise an exception.
+		client will send a signal(1988) to server to initial negotiation
+
+Instruction to run program:
+	- place code files in same directory than makefile and input file.
+	- execute make in order to compile the java files
+	- run emulator first using this command ./nEmulator-linux386 9904 host2 9002 9920 host3 9995 1 0.2 0
+        - then run the receiver by using: 
+		java receiver host1 9920 9002 <output file >
+	- at last, run the sender by using:
+		java sender host1 9904 9995 <input text file>
+
+Executable files:
+	After make, you will get packet.class, sender.class and receiver.class that are both executable
+	files
+
+undergrad machine tested on:
+			linux024.student.cs.uwaterloo.ca
+			linux028.student.cs.uwaterloo.ca
+			linux032.student.cs.uwaterloo.ca
+	
+Version of makefile:
+			GNU Make 3.81
+
+Version of java compiler:
+			javac 1.6.0_27

@@ -1,0 +1,32 @@
+Instructions for program
+
+Commands:
+ 	$ make 
+		this command compiles all packet.java, send.java and receiver.java 
+		by running javac on both java files.
+
+	$ make clean
+		remove all .class files which has been compiled
+	$ ./router <router id> <host of nse> <nse port> <router port>
+		run the program to connect to nse.
+
+Instruction to run program:
+	- place code files in same directory than makefile and input file.
+	- execute make in order to compile the java files and generate a script router
+	- run nse first using this command ./nse-linux386 host2 12100
+        - then run the receiver by using: 
+		./router 1 host1 9999 9991
+
+Executable files:
+	After make, you will get router.class, Link.class, RIB.class, Topology.class are both executable
+	files. But the script file router is the executable user should run 
+
+undergrad machine tested on:
+			linux024.student.cs.uwaterloo.ca
+			linux032.student.cs.uwaterloo.ca
+	
+Version of makefile:
+			GNU Make 3.81
+
+Version of java compiler:
+			javac 1.6.0_27

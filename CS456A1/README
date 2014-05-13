@@ -1,0 +1,28 @@
+Instructions for program
+Commands:
+ 	$ make 
+		this command compiles both Server.java and Client.java by running javac on both java files.
+
+	$ make clean
+		remove all .class files which has been compiled
+	$ java server
+		run server program before run client. 
+		server will generate a random port number for TCP negotiation with client.
+		server has to be run before execute client program
+	$ java client <host1/server_address> <n_port> msg
+		run client program after server has been started.
+		Any of the three arguments is missing will raise an exception.
+		client will send a signal(1988) to server to initial negotiation
+
+Executable files:
+	After make, you will get Client.class and Server.class that are both executable
+	files
+
+undergrad machine tested on:
+				ubuntu1204-004
+	
+Version of makefile:
+			GNU Make 3.81
+
+Version of java compiler:
+			javac 1.6.0_27
